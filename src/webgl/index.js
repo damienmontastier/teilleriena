@@ -1,10 +1,9 @@
 import * as THREE from "three";
-import Raf from "./js/utils/raf";
-import Camera from "/src/js/objects/camera";
-import Viewport from "./js/utils/viewport";
+import Raf from "../js/utils/raf";
+import Camera from "../js/objects/camera";
+import Viewport from "../js/utils/viewport";
 import { SVGLoader } from "three/examples/jsm/loaders/SVGLoader";
-import viewport from "./js/utils/viewport";
-const map = require("./svg/ITX.svg");
+const map = require("../svg/ITX.svg");
 
 // TODO - FACTORISER LE CODE
 
@@ -38,7 +37,7 @@ export default class Main {
 		window.addEventListener("mousemove", this.onMouseMove.bind(this), false);
 
 		window.addEventListener("resize", () => {
-			this.renderer.setSize(viewport.width, viewport.height);
+			this.renderer.setSize(Viewport.width, Viewport.height);
 		});
 
 		Raf.add("renderer", { callback: this.render.bind(this) });
@@ -48,11 +47,11 @@ export default class Main {
 		const map = document.querySelector(".map");
 		const { width, height, x, y } = map.getBoundingClientRect();
 		console.log(width, height, x, y);
-		const geometry = new THREE.PlaneBufferGeometry(width, height, 32);
-		const material = new THREE.MeshBasicMaterial({ color: 0x00000, side: THREE.DoubleSide });
-		const plane = new THREE.Mesh(geometry, material);
-		plane.position.set(viewport.width / -2 + (width / 2 + x), 0, 0);
-		this.scene.add(plane);
+		// const geometry = new THREE.PlaneBufferGeometry(width, height, 32);
+		// const material = new THREE.MeshBasicMaterial({ color: 0x00000, side: THREE.DoubleSide });
+		// const plane = new THREE.Mesh(geometry, material);
+		// plane.position.set(viewport.width / -2 + (width / 2 + x), 0, 0);
+		// this.scene.add(plane);
 	}
 
 	initSvg(data) {
@@ -84,7 +83,7 @@ export default class Main {
 
 		svgs.add(this.hoverables);
 		this.scene.add(svgs);
-		svgs.position.set(viewport.width / -2, viewport.height / -2, 0);
+		svgs.position.set(Viewport.width / -2, Viewport.height / -2, 0);
 	}
 
 	createMesh(path) {
@@ -150,36 +149,4 @@ export default class Main {
 
 		this.renderer.render(this.scene, Camera);
 	}
-}
-
-function getAbsoluteBoundingRect(el) {
-	var doc = document,
-		win = window,
-		body = doc.body,
-		// pageXOffset and pageYOffset work everywhere except IE <9.
-		offsetX = win.pageXOffset !== undefined ? win.pageXOffset : (doc.documentElement || body.parentNode || body).scrollLeft,
-		offsetY = win.pageYOffset !== undefined ? win.pageYOffset : (doc.documentElement || body.parentNode || body).scrollTop,
-		rect = el.getBoundingClientRect();
-
-	if (el !== body) {
-		var parent = el.parentNode;
-
-		// The element's rect will be affected by the scroll positions of
-		// *all* of its scrollable parents, not just the window, so we have
-		// to walk up the tree and collect every scroll offset. Good times.
-		while (parent !== body) {
-			offsetX += parent.scrollLeft;
-			offsetY += parent.scrollTop;
-			parent = parent.parentNode;
-		}
-	}
-
-	return {
-		bottom: rect.bottom + offsetY,
-		height: rect.height,
-		left: rect.left + offsetX,
-		right: rect.right + offsetX,
-		top: rect.top + offsetY,
-		width: rect.width,
-	};
 }
