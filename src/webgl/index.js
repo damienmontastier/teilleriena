@@ -9,36 +9,36 @@ const map = require("../svg/ITX.svg");
 
 export default class Main {
 	constructor() {
-		this.scene = new THREE.Scene();
+		// this.scene = new THREE.Scene();
 
-		this.canvas = document.getElementById("canvas");
+		// this.canvas = document.getElementById("canvas");
 
-		this.renderer = new THREE.WebGLRenderer({
-			canvas: this.canvas,
-			scene: this.scene,
-			antialias: true,
-			alpha: true,
-		});
+		// this.renderer = new THREE.WebGLRenderer({
+		// 	canvas: this.canvas,
+		// 	scene: this.scene,
+		// 	antialias: true,
+		// 	alpha: true,
+		// });
 
-		this.raycaster = new THREE.Raycaster();
-		this.mouse = new THREE.Vector2(-1000, -1000);
+		// this.raycaster = new THREE.Raycaster();
+		// this.mouse = new THREE.Vector2(-1000, -1000);
 
-		this.renderer.setSize(Viewport.width, Viewport.height);
+		// this.renderer.setSize(Viewport.width, Viewport.height);
 
-		this.renderer.setPixelRatio(Viewport.ratio);
+		// this.renderer.setPixelRatio(Viewport.ratio);
 
-		var axesHelper = new THREE.AxesHelper(100);
-		this.scene.add(axesHelper);
+		// var axesHelper = new THREE.AxesHelper(100);
+		// this.scene.add(axesHelper);
 
-		this.load().then(this.initSvg.bind(this));
+		// this.load().then(this.initSvg.bind(this));
 
-		this.initPlane();
+		// this.initPlane();
 
-		window.addEventListener("mousemove", this.onMouseMove.bind(this), false);
+		// window.addEventListener("mousemove", this.onMouseMove.bind(this), false);
 
-		window.addEventListener("resize", () => {
-			this.renderer.setSize(Viewport.width, Viewport.height);
-		});
+		// window.addEventListener("resize", () => {
+		// 	this.renderer.setSize(Viewport.width, Viewport.height);
+		// });
 
 		Raf.add("renderer", { callback: this.render.bind(this) });
 	}
@@ -46,12 +46,12 @@ export default class Main {
 	initPlane() {
 		const map = document.querySelector(".map");
 		const { width, height, x, y } = map.getBoundingClientRect();
-		console.log(width, height, x, y);
-		// const geometry = new THREE.PlaneBufferGeometry(width, height, 32);
-		// const material = new THREE.MeshBasicMaterial({ color: 0x00000, side: THREE.DoubleSide });
-		// const plane = new THREE.Mesh(geometry, material);
-		// plane.position.set(viewport.width / -2 + (width / 2 + x), 0, 0);
-		// this.scene.add(plane);
+		const geometry = new THREE.PlaneBufferGeometry(width, height, 32);
+		const material = new THREE.MeshBasicMaterial({ side: THREE.DoubleSide });
+		this.plane = new THREE.Mesh(geometry, material);
+		this.plane.position.set(Viewport.width / -2 + (width / 2 + x), 0, 0);
+		this.plane.rotation.set(0, 0, THREE.Math.degToRad(2));
+		this.scene.add(this.plane);
 	}
 
 	initSvg(data) {
@@ -82,8 +82,11 @@ export default class Main {
 		}
 
 		svgs.add(this.hoverables);
-		this.scene.add(svgs);
-		svgs.position.set(Viewport.width / -2, Viewport.height / -2, 0);
+		svgs.scale.multiplyScalar(0.8);
+		svgs.position.set(973 / -2, 855 / -2, 0);
+		this.plane.add(svgs);
+
+		console.log(this.scene);
 	}
 
 	createMesh(path) {
