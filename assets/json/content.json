@@ -1,0 +1,31 @@
+{
+  "flowers": [
+    {
+      "name": "Magnolia",
+      "name_latin": "Magnolia grandiflora",
+      "division": "Magnoliophyta",
+      "class": "Magnoliopsida",
+      "order": "Magnoliales",
+      "family": " Magnoliaceae",
+      "description": "Ce sont des arbres ou arbustes, à feuilles généralement grandes, alternes, ovales ou elliptiques, caduques ou persistantes, généralement coriaces.\n\nLes fleurs solitaires, sont grandes, très décoratives, souvent dressées, généralement en forme de coupe. Le périgone est formé de six à neuf tépales pétaloïdes (pétales et sépales indifférenciés) de couleur claire, blanc rosé, jaune clair. Les étamines, très nombreuses sont lamellaires. Les carpelles sont disposés en cône sur le réceptacle. Pour les botanistes, c'est une fleur primitive. La floraison apparaît généralement après quinze à trente ans. Les fruits, en forme de cône, sont à déhiscence longitudinale. Ils sont composés d'un ensemble de follicules (fruit sec dérivé d'un seul carpelle) et contiennent des graines à tégument rouge."
+    },
+    {
+      "name": "Charme commun",
+      "name_latin": "Carpinus betulus\n",
+      "division": "Magnoliophyta",
+      "class": "Magnoliopsida",
+      "order": "Fagales",
+      "family": "Betulaceae",
+      "description": "Le Charme commun est un arbre de taille moyenne mesurant jusqu'à 20 m de haut environ. On le distingue facilement par son tronc cannelé, comme formé de muscles, longs et légèrement sinueux. Ces cannelures sont ténues chez les jeunes arbres mais deviennent très marquées chez les vieux sujets. Lorsque l'arbre est isolé en pleine lumière, son houppier assez régulier porte un feuillage dense vert clair.\n\nLes feuilles alternes sont oblongues aiguës, doublement dentées, portées par des rameaux fins brun vert. Elles sont marcescentes : une partie d'entre elles restent sur l'arbre tout l'hiver. Elles ont la réputation de faire un bon humus.\n\nLes fleurs en chatons apparaissent en même temps que les feuilles. Les chatons mâles sont cylindriques, les chatons femelles plus grêles.                                                                        « Le charme d'Adam, c'est d'être à poil » est un moyen mnémotechnique qui permet de distinguer les feuilles du Charme (à dents) de celles du Hêtre (à poils).\n\n"
+    },
+    {
+      "name": "Figuier",
+      "name_latin": "Ficus carica",
+      "division": "Magnoliophyta",
+      "class": "Magnoliopsida",
+      "order": "Urticales",
+      "family": "Moraceae",
+      "description": "Dans la cour du temple d'Héliopolis en Égypte poussait un vénérable sycomore, ou Figuier des pharaons. On l'appelait le Figuier du dieu Thot et de la déesse Seshat. Thot, le dieu à tête d'ibis, était le dieu de la sagesse, Il était le scribe divin, il contrôlait les saisons, les phases de la lune et l'avancée des étoiles. Il inscrivait sur les feuilles du figuier du Paradis tout ce qui avait marqué la vie de chaque être humain, afin de préparer le jour du jugement par Osiris, dieu des morts.\n\nLa figue était l'un des fruits du paradis pour les Égyptiens. Fruit d'immortalité, il était donné par la Dame du Sycomore, soit la déesse Neith, Nephtys, Isis ou Hathor, aux âmes des défunts représentées par des oiseaux perchés sur l'arbre. Probablement, il s'agit davantage d'Hathor, la déesse du destin souvent montrée avec une tête de vache assimilée au Moyen Empire à Nout. Un hiéroglyphe montre un panier de figues dans des corbeilles recouvertes de feuilles, sans doute pour qu'elles restent fraîches. Comme un signe du destin, la dernière souveraine égyptienne, Cléopâtre, mourut mordue au sein par un serpent caché dans une corbeille de figues. La mort se dissimulait dans la vie10 !"
+    }
+  ]
+}
