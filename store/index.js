@@ -16,6 +16,9 @@ export const getters = {
 export const mutations = {
   setAppContent: (state, value) => {
     state.content = value;
+  },
+  setAppIndex: (state, value) => {
+    state.index = value;
   }
 };
 
