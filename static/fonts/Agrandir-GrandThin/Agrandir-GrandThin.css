@@ -1,0 +1,8 @@
+@font-face {
+  font-family: "Agrandir-GrandThin";
+  src: url("Agrandir-GrandThin.woff2") format("woff2"),
+    url("Agrandir-GrandThin.woff") format("woff"),
+    url("Agrandir-GrandThin.otf") format("opentype");
+  font-style: normal;
+  font-weight: 400;
+}

@@ -58,7 +58,7 @@ export default {
       }
       &--bottom-right {
         position: absolute;
-        right: -60px;
+        right: 0;
         bottom: -60px;
       }
     }

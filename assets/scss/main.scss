@@ -1,9 +1,13 @@
+@import "modules/colors";
+@import "modules/fonts";
+@import "core/index";
+
 body {
   overflow: hidden;
   position: relative;
   width: 100%;
   height: 100vh;
-  background-color: red;
+  // background-color: var(--color-sand);
 }
 
 #__nuxt {

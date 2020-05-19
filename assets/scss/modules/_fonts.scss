@@ -1,0 +1,19 @@
+$font-faces: (
+  "Agrandir-GrandHeavy",
+  "Agrandir-GrandThin",
+  "Agrandir-WideBlack"
+);
+
+@mixin font-faces() {
+  @each $font-face in $font-faces {
+    @font-face {
+      font-display: swap;
+      font-family: #{$font-face};
+      font-style: normal;
+      font-weight: 400;
+      src: url("/fonts/#{$font-face}/#{$font-face}.woff2") format("woff2"),
+        url("/fonts/#{$font-face}/#{$font-face}.woff") format("woff"),
+        url("/fonts/#{$font-face}/#{$font-face}.otf") format("opentype");
+    }
+  }
+}

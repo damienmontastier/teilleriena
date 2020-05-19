@@ -4,7 +4,7 @@ export const strict = false;
 
 export const state = () => ({
   content: null,
-  index: 0
+  index: null
 });
 
 export const getters = {

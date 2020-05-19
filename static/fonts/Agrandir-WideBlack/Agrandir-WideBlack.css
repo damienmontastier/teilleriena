@@ -1,0 +1,8 @@
+@font-face {
+  font-family: "Agrandir-WideBlack";
+  src: url("Agrandir-WideBlack.woff2") format("woff2"),
+    url("Agrandir-WideBlack.woff") format("woff"),
+    url("Agrandir-WideBlack.otf") format("opentype");
+  font-style: normal;
+  font-weight: 400;
+}

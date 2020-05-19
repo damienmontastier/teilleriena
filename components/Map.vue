@@ -960,16 +960,18 @@
 </template>
 
 <script>
-import { mapMutations } from "vuex";
+import { mapMutations, mapState } from "vuex";
 
 export default {
   data() {
     return {};
   },
   mounted() {
-    this.g = this.$refs.map.getElementsByTagName("g");
+    this.g = Array.from(this.$refs.map.getElementsByTagName("g")).reverse();
 
-    Array.from(this.g).forEach((elm, index) => {
+    this.g[0].classList.add("is-hover");
+
+    this.g.forEach((elm, index) => {
       let dataName =
         elm.getAttribute("data-name") === 0
           ? 0
@@ -980,6 +982,12 @@ export default {
         this.handleMouseHover.bind(this, dataName)
       );
     });
+  },
+
+  computed: {
+    ...mapState({
+      index: state => state.index
+    })
   },
   methods: {
     handleMouseHover(dataName, e) {
